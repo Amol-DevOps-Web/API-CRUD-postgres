@@ -32,7 +32,7 @@ function arrSort(arr){
         p++;
       }
       //arrOdd.sort()  
-     let min = arrOdd[0]
+    // let min = arrOdd[0]
      arrOdd.sort(function(a,b){return a-b})
 
       for(let i=0;i<arrOdd.length;i++){
