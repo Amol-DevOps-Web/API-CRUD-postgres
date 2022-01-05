@@ -1,10 +1,15 @@
-emp={
-    fname:"Amol",
-    lname:"Chavan",
-    DoB:"30-10-1994",
-    email:"acramolchavan@gmail.com"
-}
+let varTval = new Promise((resolve,reject)=>{
+    let i =7
+    if(i != 3 ){
+      resolve("Successfully....!");
+    }else{
+        reject("Unsuccessfully....!");
+    }
 
-for (let x in emp){
-    console.log(emp[x])
-}
+})
+let i=3;
+varTval.then((resolve)=>{
+ console.log(resolve)
+}).catch((reject)=>{
+  console.log(reject)
+})

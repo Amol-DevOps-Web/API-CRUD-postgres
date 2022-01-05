@@ -8,15 +8,9 @@ db.connect()
 //ROUTES...!
 app.post('/insertData',async(req,res)=>{
     try{
-        let firstname='sushant'
-        let lastname='pgm'
-        let email='xyzpgm@gmai.com'
-        let mobile='8830631098'
-        let  job= 'Civil engneer'
-        let passwords='Life@1234'
-      const {fname} = req.body;
-      
-      db.connect()
+        let {firstname,lastname,email,mobile,job,passwords}= req.body;
+        console.log(firstname,lastname,email,mobile,job,passwords);
+      //db.connect()
       const insertNew = await db.query(
       "INSERT INTO accountdetail(firstname,lastname,email,mobile,job,passwords) VALUES($1,$2,$3,$4,$5,$6) RETURNING *",
       [firstname,lastname,email,mobile,job,passwords]);
@@ -30,7 +24,7 @@ app.post('/insertData',async(req,res)=>{
 
 
 // Display Data from the Database
-app.get('/insertData', async(req,res)=>{
+app.get('/getData', async(req,res)=>{
     try{
     const getData = await db.query('SELECT * FROM accountdetail')
          res.json(getData.rows);
